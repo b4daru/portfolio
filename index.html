@@ -6,12 +6,6 @@
   <title>Badarudheen VK — Web Designer & Developer</title>
   <meta name="description" content="Badarudheen VK is a professional web designer and developer based in Kerala, delivering stunning, SEO-friendly websites and digital solutions."/>
   <meta name="keywords" content="best web designer in kerala, webdesigner in malappuram, web designer in kondotty, web designer in manjery, web designer in calicut, web designer in areekode, web developer kerala"/>
-  <link rel="canonical" href="https://your-domain.com/"/>
-  <meta property="og:title" content="Badarudheen VK — Web Designer & Developer">
-  <meta property="og:description" content="Professional web designer and developer in Kerala delivering stunning websites and digital solutions.">
-  <meta property="og:url" content="https://your-domain.com/">
-  <meta property="og:image" content="https://your-domain.com/your-photo.jpg">
-  <meta name="twitter:card" content="summary_large_image">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -22,156 +16,105 @@
       --bg: #f8fafc;
       --section: #fff;
       --muted: #e3e7ef;
-      --shadow: rgba(35,35,78,0.08);
       --gradient: linear-gradient(90deg,#00e2a7,#7998f2 60%,#fa9776 100%);
     }
-    html, body {
+    body {
       margin: 0; padding: 0;
       background: var(--bg);
-      color: var(--primary);
-      font-family: 'Inter', Arial, sans-serif;
-      min-height: 100vh;
-      scroll-behavior: smooth;
+      color: var(--primary); font-family: 'Inter', Arial, sans-serif;
+      min-height: 100vh; scroll-behavior: smooth;
     }
-    header { background: var(--section); border-bottom: 1.5px solid var(--muted); }
-    /* Wider container for full-page effect */
-    .container {
-      max-width: 98vw;
-      margin: 0 auto;
-      padding: 0 1vw;
-      width: 100%;
-    }
-    .hero {
+    /* Make the hero take full viewport height w/ large elements */
+    .hero-fullpage {
+      height: 100vh;
       min-height: 100vh;
+      width: 100vw;
       display: flex;
-      align-items: center;
-      gap: 32px;
+      flex-direction: column;
       justify-content: center;
-      flex-wrap: wrap;
-      padding: 0;
-    }
-    .hero-img { flex: 0 0 142px; width: 142px; height: 142px; background: var(--bg); border-radius: 50%; overflow: hidden;
-      border: 5px solid var(--accent2); box-shadow: 0 10px 40px #00e2a735; margin-right: 37px; position: relative;}
-    .hero-img img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
-    .hero-info { flex: 1 1 350px; }
-    .hero-info h1 {
-      margin: 0 0 8px 0; font-family: 'Playfair Display',serif; font-size: 2.7rem; font-weight: 700;
-      background: var(--gradient); -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; letter-spacing: 1.1px;
-      animation: fadeInLeft 1s .65s both;
-    }
-    .hero-info h2 { margin: 0 0 14px 0; font-size: 1.19rem; color: var(--primary); font-weight: 400; letter-spacing: 1px; position: relative; overflow: hidden; }
-    .hero-info h2:after {
-      content: "";
-      display: block; width: 85px; height: 4px;
-      background: var(--accent2); margin: 14px 0 0 0; border-radius: 7px;
-      opacity: 0.35; animation: growLine .5s .65s both;
-    }
-    @keyframes growLine { from { width:0; } to { width:85px; } }
-    .hero-info p { color: #3d3f56; line-height: 1.57; font-size: 1.09em; margin-bottom: 10px; }
-    .socials { margin: 20px 0 0 0; display: flex; gap: 18px; flex-wrap: wrap; }
-    .sm-link { display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; width: 29px; height: 29px; background: #fff;
-      border: 2.5px solid var(--accent); transition: background .16s, border .16s, box-shadow .17s, transform .15s;
-      color: var(--primary); font-size: 1.29em; box-shadow: 0 2px 12px #00e2a71a; text-decoration: none;}
-    .sm-link:hover { background: var(--accent3); color: #fff; border-color: var(--accent2); transform: scale(1.14) rotate(-6deg);}
-    .sm-link svg { display:block; width:62%; height:62%; }
-
-    .divider { height: 8px; border: none; background: var(--gradient); margin: 30px 0 35px 0; border-radius: 100px; opacity:.55; }
-    .section {
-      margin-top: 38px; background: var(--section); border-radius: 12px;
-      box-shadow: 0 1.6px 13px #7998f218, 0 1.5px 0 var(--accent);
-      padding: 34px 30px 26px 30px; opacity: 0; transform: translateY(50px);
-      transition: opacity .8s cubic-bezier(.52,.1,.25,.95), transform .8s cubic-bezier(.52,.1,.25,.95);
-    }
-    .section.s--visible { opacity: 1; transform: none; }
-    h3 {
-      font-family: 'Playfair Display',serif; color: var(--primary); font-size: 1.32rem; margin-top: 0;
-      border-bottom: 2px solid var(--accent3); display: inline-block; padding-bottom: 2.5px; letter-spacing: .6px;
-      background: var(--gradient); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
-    }
-    .stats { display: flex; gap: 26px; flex-wrap: wrap; margin: 18px 0 0 0;}
-    .stat { flex: 1 1 113px; background: var(--bg); border-radius: 8px; border: 1.5px solid var(--muted); box-shadow: 0 2px 8px #7998f215; min-width: 100px; padding: 15px 11px 8px 11px; text-align: center;}
-    .stat-number { font-size: 1.75em; font-weight: 700; color: var(--accent3); }
-    .stat-label { color: var(--primary); font-weight: 600; font-size: .99em; }
-    .projects { display: flex; gap: 19px; flex-wrap: wrap; }
-    .project {
-      flex: 1 1 255px; background: #f6f0ff; border-radius: 15px; border: 1.5px solid var(--accent2);
-      box-shadow: 0 4px 20px #fa97761c; min-width: 210px; padding: 17px 13px 13px 13px; margin-bottom: 13px; position: relative;
-      opacity: 0; transform: translateY(35px); transition: .75s cubic-bezier(.64,.01,.36,1);
-    }
-    .project.s--visible { opacity: 1; transform: none; }
-    .project:hover {
-      border-color: var(--accent3);
-      box-shadow: 0 9px 36px #fa97763a;
-      transform: translateY(-7px) scale(1.045) rotateZ(-1.1deg);
-      z-index: 2;
-    }
-    .project h4 { margin: 0 0 9px 0; color: var(--accent2); font-size: 1.15rem; font-family: 'Playfair Display', serif; transition: color 0.18s; }
-    .project p { min-height: 31px; margin-bottom: 8px; color: #4e5070; }
-    .project a { color: var(--primary); font-weight: 600; text-decoration: underline; font-size: 1em; transition: color 0.15s; }
-    .project a:hover { color: var(--accent);}
-    .skills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 19px; padding: 0; list-style: none; opacity: 0;}
-    .skills.s--visible { opacity: 1; transition: opacity .8s .1s; }
-    .skills li {
-      background: var(--accent2); color: #fff; font-weight: 700; padding: 7px 16px; border-radius: 15px; font-size: 1em;
-      box-shadow: 0 1.6px 9px #7998f21a; transition: background 0.17s, color 0.14s, transform 0.22s; cursor: pointer;
-    }
-    .skills li:hover {
-      background: var(--accent3); color: #fff; animation: badgeBouncy .42s cubic-bezier(.5,1.85,.62,1.24);
-    }
-    @keyframes badgeBouncy { 0% { transform: scale(1); } 40% { transform: scale(1.15); } 75% { transform: scale(.97); } 100% { transform: scale(1); } }
-    .contact-btns { display: flex; gap: 15px; margin-top: 14px; flex-wrap: wrap; }
-    .contact-btns a {
-      text-decoration: none; color: var(--primary); border: 2px solid var(--accent2); background: #fff;
-      border-radius: 8px; padding: 10px 24px; font-weight: 800; letter-spacing: .07rem; font-size: 1.07em;
-      font-family: 'Inter', sans-serif; transition: background .17s, color .17s, box-shadow .14s, transform .17s;
-      margin-bottom: 6px; box-shadow: 0 6px 18px #7998f217; position: relative;
-    }
-    .contact-btns a:hover {
-      background: var(--accent3); color: #fff; box-shadow: 0 5px 30px #fa97766b; animation: popBtn .22s cubic-bezier(.63, .03, .24, 1.4);
-    }
-    @keyframes popBtn { 0% { transform: scale(1); } 60% { transform: scale(1.13); } 100% { transform: scale(1); } }
-    #backTop {
-      position: fixed; right: 22px; bottom: 30px; z-index: 22; background: var(--accent); color: #fff;
-      border-radius: 50%; border: none; width: 48px; height: 48px;
-      box-shadow: 0 6px 18px #aaa7; font-size: 2em; cursor: pointer; opacity: 0; pointer-events: none;
-      transition: opacity .2s;
-    }
-    #backTop.s--active { opacity: 1; pointer-events: auto; }
-    footer {
+      align-items: center;
       background: var(--section);
-      border-top: 1.5px solid var(--muted);
+      box-sizing: border-box;
       text-align: center;
-      padding: 26px 20px;
-      margin-top: 48px;
-      color: var(--primary);
-      font-family: 'Inter', Arial, sans-serif;
-      font-size: 1em;
     }
-    footer h3 {
+    /* Make the photo and all text elements larger */
+    .hero-img {
+      width: 200px; height: 200px;
+      border-radius: 50%; overflow: hidden;
+      border: 7px solid var(--accent2);
+      box-shadow: 0 16px 48px #00e2a728;
+      margin-bottom: 34px;
+      background: var(--bg);
+    }
+    .hero-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .hero-info h1 {
+      margin: 0 0 14px 0;
       font-family: 'Playfair Display', serif;
+      font-size: 3.1rem;
       font-weight: 700;
+      background: var(--gradient); -webkit-background-clip: text;
+      color: transparent; -webkit-text-fill-color: transparent;
+      letter-spacing: 1.4px;
+    }
+    .hero-info h2 {
+      margin: 0 0 24px 0;
+      font-size: 1.8rem;
       color: var(--accent2);
-      margin-bottom: 12px;
+      font-weight: 500;
+      letter-spacing: 0.8px;
     }
-    footer a { color: var(--accent); text-decoration: underline; }
-    @media (max-width: 1020px) { .container { max-width: 100vw; } }
-    @media (max-width: 820px) {
-      .container { max-width: 98vw; padding: 0 1vw;}
-      .hero { flex-direction: column; align-items: flex-start; min-height: 100vh; }
+    .hero-info p {
+      color: #444d6b; font-size: 1.22em; margin: 0 0 32px 0; line-height: 1.7;
+      font-weight: 500;
     }
-    @media (max-width: 490px) {
-      .hero-img { width: 80px; height: 80px; }
-      .section { border-radius: 7px; }
-      header, main { font-size: 0.97em; }
-      .sm-link { width: 22px; height: 22px; }
-      #backTop { width: 40px; height: 40px; font-size: 1.6em; }
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 0;
+      margin-top: 18px;
     }
-    @keyframes fadeInLeft { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: none; } }
+    .sm-link {
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; width: 56px; height: 56px;
+      background: #fff;
+      border: 3.8px solid var(--accent);
+      color: var(--primary); font-size: 2rem;
+      transition: background .18s, border .16s, box-shadow .17s, transform .13s;
+      box-shadow: 0 4px 28px #7998f232; text-decoration: none;
+    }
+    .sm-link:hover {
+      background: var(--accent3);
+      color: #fff;
+      border-color: var(--accent2);
+      transform: scale(1.13) rotate(-4deg);
+    }
+    .sm-link svg { width: 60%; height: 60%; }
+    @media(max-width:800px){
+      .hero-img {width:125px;height:125px;}
+      .hero-info h1 {font-size:2.2rem;}
+      .hero-info h2 {font-size:1.1rem;}
+      .socials {gap:18px;}
+      .sm-link {width:38px;height:38px;font-size:1.09rem;}
+      .hero-info p {font-size:1em;}
+    }
+    @media(max-width:480px){
+      .hero-fullpage {padding:14vw 0;}
+      .hero-img {width:80px;height:80px;}
+      .hero-info h1 {font-size:1.21rem;}
+      .hero-info h2 {font-size:0.8rem;}
+      .sm-link {width:29px;height:29px;}
+      .hero-info p {font-size:.96em;}
+    }
   </style>
 </head>
 <body>
+  <!-- FULL PAGE HERO -->
   <header>
-    <div class="container hero">
+    <section class="hero-fullpage">
       <div class="hero-img">
         <img src="https://i.ibb.co/HTt2wX38/521425928-18065714870326593-325783378021660010-n.jpg" alt="Badarudheen VK">
       </div>
@@ -179,121 +122,32 @@
         <h1>Badarudheen VK</h1>
         <h2>Ethical Hacker • Telegram Bot Developer • Web Designer</h2>
         <p>
-          Delivering stunning, SEO-friendly websites and web development solutions.<br/>
+          Delivering stunning, SEO-friendly websites and web development solutions.<br>
           Always exploring new tools, languages, and privacy-focused tech.
         </p>
         <div class="socials">
-          <!-- Social icons SVG as previously provided -->
+          <a class="sm-link" href="https://github.com/badaru" target="_blank" title="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.15 6 .15 12.35c0 5.23 3.6 9.64 8.58 10.87.6.1.82-.26.82-.57v-2.23c-3.49.76-4.22-1.53-4.22-1.53-.55-1.4-1.34-1.78-1.34-1.78-1.1-.76.08-.75.08-.75 1.22.1 1.87 1.28 1.87 1.28 1.08 1.85 2.82 1.32 3.51 1.01.1-.77.43-1.33.77-1.63-2.79-.32-5.73-1.39-5.73-6.18 0-1.36.48-2.47 1.28-3.34-.13-.31-.56-1.56.12-3.25 0 0 1.05-.34 3.46 1.27.99-.28 2.06-.42 3.12-.42s2.13.14 3.12.42c2.41-1.61 3.46-1.27 3.46-1.27.68 1.69.25 2.94.12 3.25.8.87 1.28 1.98 1.28 3.34 0 4.8-2.94 5.86-5.74 6.18.44.38.82 1.12.82 2.25v3.34c0 .31.22.67.83.56A10.86 10.86 0 0023.85 12.35C23.85 6 18.34.5 12 .5Z"/></svg>
+          </a>
+          <a class="sm-link" href="https://twitter.com/badaru" target="_blank" title="Twitter" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.543 7.104c.012.17.012.34.012.512 0 5.21-3.97 11.23-11.23 11.23-2.23 0-4.304-.653-6.052-1.773.308.037.617.056.932.056 1.85 0 3.555-.631 4.915-1.693a3.951 3.951 0 01-3.69-2.74c.243.037.491.061.748.061.364 0 .72-.048 1.056-.139-1.805-.364-3.165-1.957-3.165-3.873v-.05A3.97 3.97 0 005.64 9.58c.212.058.433.09.66.095a3.953 3.953 0 01-1.758-3.283c0-.728.196-1.41.54-1.998A11.235 11.235 0 0012 6.15a11.25 11.25 0 0010.681-1.409c-.34.581-.534 1.258-.534 1.976 0 1.364.695 2.567 1.76 3.275-.645-.02-1.238-.197-1.764-.49.006.016.006.033.006.05z"/></svg>
+          </a>
+          <a class="sm-link" href="https://instagram.com/badaru" target="_blank" title="Instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.2c3.2 0 3.584 0 4.85.07 1.17.07 1.977.29 2.44.494a4.894 4.894 0 011.75 1.066 4.89 4.89 0 011.06 1.75c.21.462.43 1.27.5 2.44.07 1.266.07 1.65.07 4.85s0 3.584-.07 4.85c-.07 1.17-.29 1.977-.5 2.44-.22.51-.54.998-1.06 1.75a4.9 4.9 0 01-1.75 1.06c-.463.205-1.27.432-2.44.5-1.266.07-1.65.07-4.85.07s-3.584 0-4.85-.07c-1.17-.068-1.977-.295-2.44-.5A4.905 4.905 0 012.21 19.16a4.913 4.913 0 01-1.06-1.75c-.205-.463-.432-1.27-.5-2.44-.07-1.266-.07-1.65-.07-4.85s0-3.584.07-4.85c.07-1.17.295-1.977.5-2.44A4.886 4.886 0 012.2 4.35c.463-.205 1.27-.432 2.44-.5C7.162 2.199 7.546 2.2 12 2.2zm0-2.2C8.705 0 8.296 0 7.03.07 5.736.132 4.877.354 4.086.637 3.17.956 2.292 1.615 1.614 2.291c-.677.677-1.336 1.555-1.655 2.471C-.344 5.118-.567 5.977-.629 7.272-.7 8.538-.701 8.947-.701 12.001c0 3.053 0 3.464.07 4.73.062 1.295.285 2.154.567 2.944.319.916.978 1.794 1.654 2.471.678.676 1.556 1.335 2.472 1.654.79.282 1.649.505 2.944.567 1.266.07 1.675.07 4.729.07 3.054 0 3.463 0 4.73-.07 1.294-.062 2.153-.285 2.944-.567.917-.319 1.795-.978 2.472-1.654.676-.677 1.335-1.555 1.654-2.471.282-.79.505-1.649.567-2.944.07-1.266.07-1.675.07-4.73s0-3.463-.07-4.729c-.062-1.295-.285-2.154-.567-2.944-.319-.916-.978-1.794-1.654-2.471C21.709 1.615 20.832.957 19.916.638c-.791-.282-1.65-.505-2.945-.567C15.463-.001 15.054-.002 12-.002z"/><circle cx="18.406" cy="5.594" r="1.44"/></svg>
+          </a>
+          <a class="sm-link" href="https://t.me/badaru" target="_blank" title="Telegram" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.632 16.573c-.055.231-.162.463-.357.616-.195.154-.45.136-.653.068l-2.103-.68c-.235-.077-.398-.232-.468-.447-.07-.216.02-.418.187-.596l8.727-8.993c.168-.176.354-.234.486-.172.133.061.151.246.089.478l-2.195 8.035c-.07.253-.233.418-.46.507l-1.763.71a.587.587 0 01-.298.019l-2.165-.644zm-1.161 1.337l.017.007.001-.001a1.402 1.402 0 00.085.028s-.003.003-.003.003c.025-.01.048-.011.07-.016.02-.004.037-.002.056-.002.031-.006.063-.012.085-.033a.284.284 0 00.058-.083l.675-2.078s.001-.002.001-.002c.012-.03.014-.047.051-.054l1.668-.649 2.179-7.976.67-2.598a.431.431 0 00-.081-.389c-.061-.073-.183-.074-.254-.011l-8.726 8.991c-.07.07-.11.167-.08.252.03.086.092.152.176.181l2.112.68c.198.064.418.061.572.014.154-.048.373-.093.486-.141l1.149-.439.043.016c.05.019.097.027.143.042z"/></svg>
+          </a>
+          <a class="sm-link" href="https://linkedin.com/in/badaru" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.997 19.997h-3.554v-5.53c0-1.318-.025-3.015-1.848-3.015-1.848 0-2.13 1.444-2.13 2.936v5.609h-3.553v-11.356h3.412v1.552h.049c.476-.901 1.637-1.85 3.37-1.85 3.604 0 4.267 2.368 4.267 5.453v6.201zM5.337 7.989c-1.144 0-2.072-.928-2.072-2.071 0-1.143.928-2.071 2.072-2.071 1.142 0 2.071.928 2.071 2.071s-.929 2.071-2.071 2.071zm1.778 12.008h-3.556v-11.357h3.556v11.357zm15.778-19.997h-20c-1.102 0-2 .897-2 2v20c0 1.103.898 2 2 2h20c1.104 0 2-.897 2-2v-20c0-1.103-.896-2-2-2z"/></svg>
+          </a>
+          <a class="sm-link" href="https://facebook.com/badaru" target="_blank" title="Facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.595 0 0 .594 0 1.326V22.67c0 .73.595 1.324 1.325 1.324h11.49V14.691h-3.129v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.762v2.312h3.59l-.467 3.622h-3.123V24h6.116c.73 0 1.324-.595 1.324-1.325V1.326C24 .595 23.405 0 22.675 0"/></svg>
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   </header>
-  <div class="divider" aria-hidden="true"></div>
-  <main class="container" role="main" aria-label="Main content">
-    <section class="section reveal" aria-labelledby="stats-heading" style="background:linear-gradient(90deg,#fff,#f6f6ff 40%,#fef5e8 100%)">
-      <h3 id="stats-heading">Quick Stats</h3>
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-number countup" data-target="3">0</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number countup" data-target="14">0</div>
-          <div class="stat-label">Bots Built</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number countup" data-target="25">0</div>
-          <div class="stat-label">Web Projects</div>
-        </div>
-      </div>
-    </section>
-    <div class="divider" aria-hidden="true"></div>
-    <section class="section reveal" aria-labelledby="projects-heading">
-      <h3 id="projects-heading">Projects</h3>
-      <div class="projects">
-        <article class="project" tabindex="0">
-          <h4>Telegram Bot Suite</h4>
-          <p>Automation bots for Telegram communities using PHP &amp; modern APIs.</p>
-          <a href="#" tabindex="0">View Project</a>
-        </article>
-        <article class="project" tabindex="0">
-          <h4>Web Design Portfolio</h4>
-          <p>Responsive websites built in HTML, CSS, Tailwind CSS. Demos on GitHub.</p>
-          <a href="https://github.com/badaru" target="_blank" rel="noopener noreferrer" tabindex="0">GitHub</a>
-        </article>
-      </div>
-    </section>
-    <div class="divider" aria-hidden="true"></div>
-    <section class="section reveal" aria-labelledby="skills-heading">
-      <h3 id="skills-heading">Skills</h3>
-      <ul class="skills">
-        <li>Ethical Hacking</li>
-        <li>Telegram Bot Dev (PHP)</li>
-        <li>Automation</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Tailwind CSS</li>
-        <li>OSINT</li>
-        <li>Cybersecurity</li>
-      </ul>
-    </section>
-    <div class="divider" aria-hidden="true"></div>
-    <section class="section reveal" aria-labelledby="contact-heading">
-      <h3 id="contact-heading">Contact</h3>
-      <p>Based in: Kondotty, Malappuram, Kerala, India</p>
-      <div class="contact-btns">
-        <a href="mailto:your.email@example.com" tabindex="0">Email Me</a>
-        <a href="https://github.com/badaru" target="_blank" rel="noopener noreferrer" tabindex="0">GitHub</a>
-        <a href="https://t.me/badaru" target="_blank" rel="noopener noreferrer" tabindex="0">Telegram</a>
-        <a href="https://linkedin.com/in/badaru" target="_blank" rel="noopener noreferrer" tabindex="0">LinkedIn</a>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <h3>Contact Us</h3>
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>Phone: +91-1234567890</p>
-    <p>Location: Kondotty, Malappuram, Kerala, India</p>
-    <p>© 2025 Badarudheen VK. All rights reserved.</p>
-  </footer>
-  <button id="backTop" aria-label="Back to top">↑</button>
-  <script>
-    // Section/project/skills reveals
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('s--visible');
-      });
-    }, { threshold: 0.22 });
-    document.querySelectorAll('.reveal, .project, .skills').forEach(el => revealObserver.observe(el));
-    // Animated stats counter
-    document.querySelectorAll('.countup').forEach(el => {
-      let started = false;
-      function runCount(){
-        if(started) return; started = true;
-        let target = +el.dataset.target, cur = 0;
-        let steps = Math.max(23, Math.floor(target * 21)), inc = target / steps,
-          frame = () => {
-            cur += inc;
-            if(cur < target) {
-              el.textContent = Math.floor(cur) + '+';
-              requestAnimationFrame(frame);
-            } else {
-              el.textContent = target + '+';
-            }
-          }
-        frame();
-      }
-      let observer = new IntersectionObserver(entries => {
-        if(entries[0].isIntersecting) runCount();
-      }, { threshold: 0.6 });
-      observer.observe(el);
-    });
-    // Back to Top button
-    const backTopBtn = document.getElementById('backTop');
-    window.addEventListener('scroll', () => {
-      backTopBtn.classList.toggle('s--active', window.scrollY > 220);
-    });
-    backTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
-  </script>
+  <!-- ... your remaining sections (stats, projects, skills, contact, footer, etc.) ... -->
 </body>
 </html>
